@@ -34,8 +34,9 @@ public class RangeUnit : Unit
             var unit = UnitsSpawner.instance.spawnedUnits[i];
             
             var distance = Vector3.Distance(transform.position, unit.transform.position);
+            var requiredDistance = radius + unit.radius;
 
-            if (distance <= radius)
+            if (distance <= requiredDistance)
             {
                 unit.Destroy();
                 i--;
